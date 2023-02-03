@@ -1,0 +1,50 @@
+La automatización fue realizada con lenguaje de programacion Java patron de diseño POM y runner MAVEN, el framework fue serenity BDD para la parte web y Serenity Rest para los servicios.
+java 11.0.18
+maven 3.8.7
+
+Para ejecutar los casos se hacen por medio de IDE Eclipse, cada caso tiene su runner por ende no hay necesidad de cambiar ningun parametro dentro de este
+
+Si no posee Eclipse lo puede hacer por la consola de comandos ejecutando los siguientes scripts
+
+Automatizacion Web:
+mvn verify -PcomprarTecnologia -Dcucumber.filter.tags="@tag2" -Dchrome.switches="--homepage=about:blank"  -Dwebdriver.driver=chrome
+
+Servicios:
+mvn verify -PservicioMascotas -Dcucumber.filter.tags="@tag3"
+
+Dentro de la ruta
+	compraNeoris/target/site/serenity/
+	
+Se encuentra los archivos de nombre:
+	realizar_compra_realizar_compra_de_dos_productos_screenshots.html
+	tienda_de_mascotas_agregar_nueva_mascota_a_la_tienda.html
+	
+Pueden revisar las evidencias de las ejecuciones
+
+Automatizacion E2E
+
+1. Se ingresa a la pagina Web, se da clic para loguearse, ingresa credenciales y entra el usuario admin
+2. elige la categoria Phone
+3. ingresa en el producto telefono Samsung galaxy S6, le da agregar al carrito y acepta el pop up y se devuelve al home de la pagina
+4.  elige la categoria Laptops
+5. ingresa en el producto portatil Sony vaio i5, le da agregar al carrito y acepta el pop up y se devuelve al home de la pagina
+6. ingresa al carrito
+7. Valida que existan los dos productos que se habian elegido por medio de bordear los objetos
+8. le da ordenar y diligencia el formulario y le da comprar
+9. por ultimo valida que el mensaje sea existo comparandolo por medio de un assert
+
+Conclusiones
+- Fue un ejercicio bastante gratificante, nos fortalece en localizadores relativos, ya que algunos elementos van cambiando.
+- Se debe tener en cuenta que cuando el usuario no cierra la venta los productos se le van acumulando a menos de que los elimine, se debe poner cuidado en esto
+- 
+
+
+Automatizacion Servicios
+1. Se agrega la nueva mascota a la tienda, esta hardcodeado el mismo dato
+2. De ahi con el id que se estableció se consulta la mascota creada
+3. Se modifica el nombre y se deja en estado sold
+4 por ultimo se consulta el estado de las mascotas en sold
+
+Conclusiones
+- Fue un poco confusa la informacion que pedia al inicio para ingresar la nueva mascota, ya que son diferentes tipos de ID y diferentes nombres, no hay informacion clara sobre esto
+- La automatizacion de servicios son bastantes complejas al inicio pero ya cuando son desarrolladas son demasiado agiles al momento de ejecutar
