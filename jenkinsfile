@@ -12,5 +12,18 @@ pipeline {
              bat("mvn verify -PcomprarTecnologia -Dcucumber.filter.tags=\"@tag2\" -Dchrome.switches=\"--homepage=about:blank\"  -Dwebdriver.driver=chrome")
          }
     }
+
+    stage('sonar') {
+           steps {
+                withSonarQubeEnv('My SonarQube Server') {
+                                    // Optionally use a Maven environment you've configured already
+                    withMaven(maven:'Maven 3.5') {
+                        sh 'mvn clean package sonar:sonar'
+                    }
+            }
+
+           }
+        }
+
    }
 }
