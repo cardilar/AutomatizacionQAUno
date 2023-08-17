@@ -4,7 +4,6 @@ pipeline {
     stage('Checkout') {
       steps {
         git branch: 'master', url:'https://github.com/cardilar/AutomatizacionQAUno.git'
-
       }
     }
 
@@ -13,5 +12,10 @@ pipeline {
              bat("mvn verify -PcomprarTecnologia -Dcucumber.filter.tags=\"@tag2\" -Dchrome.switches=\"--homepage=about:blank\"  -Dwebdriver.driver=chrome")
          }
        }
+    stage('sonar') {
+             steps {
+                 bat("sonar-scanner -Dsonar.login=squ_18f9a3726346cb51f3ff3a3cabc43a21ac099418")
+             }
+           }
   }
 }
