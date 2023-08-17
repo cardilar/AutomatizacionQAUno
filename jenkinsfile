@@ -15,7 +15,10 @@ pipeline {
 
     stage('sonar') {
        steps {
-          bat("sonar-scanner -Dsonar.login=squ_18f9a3726346cb51f3ff3a3cabc43a21ac099418")
+        withSonarQubeEnv(installationName: 'UserJenkins') {
+            bat("sonar-scanner -Dsonar.login=squ_18f9a3726346cb51f3ff3a3cabc43a21ac099418")
+        }
+
        }
     }
   }
