@@ -12,14 +12,5 @@ pipeline {
              bat("mvn verify -PcomprarTecnologia -Dcucumber.filter.tags=\"@tag2\" -Dchrome.switches=\"--homepage=about:blank\"  -Dwebdriver.driver=chrome")
          }
     }
-
-    stage('sonar') {
-       steps {
-        withSonarQubeEnv(credentialsId: 'UserJenkins') {
-            sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-        }
-
-       }
-    }
    }
 }
