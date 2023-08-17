@@ -16,7 +16,7 @@ pipeline {
     stage('sonar') {
        steps {
         withSonarQubeEnv(installationName: 'UserJenkins') {
-            bat("sonar-scanner -Dsonar.login=squ_18f9a3726346cb51f3ff3a3cabc43a21ac099418")
+            bat("mvn clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar")
         }
 
        }
