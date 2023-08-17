@@ -16,7 +16,7 @@ pipeline {
     stage('SonarQube analysis') {
         steps{
         withSonarQubeEnv(credentialsId: 'UserJenkins', installationName: 'sonar-project') { // You can override the credential to be used
-          sh 'mvn clean install sonar:sonar'
+          sh '${scannerHome}/bin/sonar-scanner -Dsonar.login=squ_18f9a3726346cb51f3ff3a3cabc43a21ac099418'
         }
       }
     }
