@@ -15,8 +15,8 @@ pipeline {
 
     stage('sonar') {
        steps {
-        withSonarQubeEnv {
-            sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+        withSonarQubeEnv(credentialsId: 'UserJenkins') {
+            sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
         }
 
        }
