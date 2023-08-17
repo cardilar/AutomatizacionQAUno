@@ -10,7 +10,7 @@ pipeline {
 
    stage('test') {
          steps {
-             bat("mvn run test")
+             bat("mvn verify -PcomprarTecnologia -Dcucumber.filter.tags=\"@tag2\" -Dchrome.switches=\"--homepage=about:blank\"  -Dwebdriver.driver=chrome")
          }
        }
   }
