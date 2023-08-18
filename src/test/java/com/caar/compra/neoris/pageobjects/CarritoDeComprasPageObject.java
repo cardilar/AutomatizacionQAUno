@@ -50,7 +50,11 @@ public class CarritoDeComprasPageObject extends PageObject{
 	}
 
 	public void validarCompra() {
-		//hola hola
+		WebElement mensaje = getDriver().findElement(By.xpath(mensajeCompra));
+		assertTrue("Thank you for your purchase!", containsText(mensaje.getText()));
+	}
+
+	public void validarCompra2() {
 		WebElement mensaje = getDriver().findElement(By.xpath(mensajeCompra));
 		assertTrue("Thank you for your purchase!", containsText(mensaje.getText()));
 	}
