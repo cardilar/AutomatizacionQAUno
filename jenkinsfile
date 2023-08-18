@@ -39,7 +39,6 @@ pipeline {
     stage('Generate Evidences'){
         steps{
             script{
-                bat (" rename \"C://ProgramData\\Jenkins\\.jenkins\\workspace\\Taller Jenkins\\target\\site\\serenity")
                     publishHTML([
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
@@ -48,7 +47,7 @@ pipeline {
                         reportFiles: 'index.html',
                         reportName: 'Evidencias Automatizacion',
                     ])
-                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "C://ProgramData//Jenkins//.jenkins//workspace//Taller Jenkins//target/site/serenity", reportFiles: 'index.html', reportName: 'Evidencias Automatizacion', reportTitles: 'Proyecto Directv'])
+                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "C://ProgramData//Jenkins//.jenkins//workspace//Taller Jenkins//target/site/serenity", reportFiles: 'realizar_compra_realizar_compra_de_dos_productos.html', reportName: 'Evidencias Automatizacion', reportTitles: 'Proyecto Directv'])
                 }
             }
      }
