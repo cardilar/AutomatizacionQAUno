@@ -48,7 +48,7 @@ pipeline {
                         reportFiles: 'index.html',
                         reportName: 'Evidencias Automatizacion',
                     ])
-                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "C://ProgramData\\Jenkins\\.jenkins\\workspace\\Taller Jenkins\\target\\site\\serenity", reportFiles: 'index.html', reportName: 'Evidencias Automatizacion', reportTitles: 'Proyecto Directv'])
+                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "C://ProgramData//Jenkins//.jenkins//workspace//Taller Jenkins//target/site/serenity", reportFiles: 'index.html', reportName: 'Evidencias Automatizacion', reportTitles: 'Proyecto Directv'])
                 }
             }
      }
