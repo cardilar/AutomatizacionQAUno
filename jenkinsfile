@@ -43,7 +43,7 @@ pipeline {
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: "C:\ProgramData\Jenkins\.jenkins\workspace\Taller Jenkins\target\site\serenity",
+                        reportDir: "C://ProgramData\\Jenkins\\.jenkins\\workspace\\Taller Jenkins\\target\\site\\serenity",
                         reportFiles: 'index.html',
                         reportName: 'Evidencias Automatizacion',
                     ])
