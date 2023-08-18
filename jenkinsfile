@@ -27,7 +27,7 @@ pipeline {
             timeout(time: 1, unit: "HOURS") {
                 waitForQualityGate abortPipeline: true
                 script {
-                    def qg=waitForQualityGate(webhookSecretId: ‘UserJenkins’)
+                    def qg=waitForQualityGate()
                     if(qg.status != ‘OK’) {
                         error “Pipeline aborted due to quality gate failed: ${qg.status}”
                     }
