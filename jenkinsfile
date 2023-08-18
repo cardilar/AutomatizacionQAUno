@@ -18,7 +18,7 @@ pipeline {
         steps{
         withSonarQubeEnv(credentialsId: 'UserJenkins', installationName: 'sonar-project') { // You can override the credential to be used
           bat("mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar")
-          bat("sonar-scanner")
+          bat("sonar-scanner -Dsonar.login=sqp_41d7a99ad34e4116783efe8577d9058282471089")
         }
       }
     }
