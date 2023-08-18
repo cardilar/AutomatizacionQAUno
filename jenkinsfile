@@ -25,9 +25,9 @@ pipeline {
     stage('Quality Gate') {
         steps {
             timeout(time: 1, unit: "HOURS") {
-                waitForQualityGate abortPipeline: true, credentialsId: 'UserJenkins'
+                waitForQualityGate abortPipeline: true
                 script {
-                    def qg=waitForQualityGate()
+                    def qg=waitForQualityGate(credentialsId: 'UserJenkins')
                     if(qg.status != ‘OK’) {
                         error “Pipeline aborted due to quality gate failed: ${qg.status}”
                     }
