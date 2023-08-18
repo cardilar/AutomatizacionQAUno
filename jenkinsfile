@@ -44,10 +44,9 @@ pipeline {
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
                         reportDir: "C://ProgramData\\Jenkins\\.jenkins\\workspace\\Taller Jenkins\\target\\site\\serenity",
-                        reportFiles: 'index.html',
+                        reportFiles: 'realizar_compra_realizar_compra_de_dos_productos.html',
                         reportName: 'Evidencias Automatizacion',
                     ])
-                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "C://ProgramData//Jenkins//.jenkins//workspace//Taller Jenkins//target/site/serenity", reportFiles: 'realizar_compra_realizar_compra_de_dos_productos.html', reportName: 'Evidencias Automatizacion', reportTitles: 'Proyecto Directv'])
                 }
             }
      }
