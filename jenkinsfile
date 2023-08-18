@@ -36,5 +36,20 @@ pipeline {
         }
     }
 
+    stage('Generate Evidences'){
+        steps{
+            script{
+                    publishHTML([
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: "C:\ProgramData\Jenkins\.jenkins\workspace\Taller Jenkins\target\site\serenity",
+                        reportFiles: 'index.html',
+                        reportName: 'Evidencias Automatizacion',
+                    ])
+                }
+            }
+     }
+
    }
 }
