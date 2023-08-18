@@ -29,7 +29,7 @@ pipeline {
                 script {
                     def qg=waitForQualityGate(webhookSecretId: ‘UserJenkins’)
                     if(qg.status != ‘OK’) {
-                        error “Pipeline aborted due to quality gate failed”
+                        error “Pipeline aborted due to quality gate failed: ${qg.status}”
                     }
                 }
             }
