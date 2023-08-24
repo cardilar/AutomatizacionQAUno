@@ -52,4 +52,11 @@ pipeline {
      }
 
    }
+    post{
+           always{
+               mail to: "cardilar@choucairtesting.com",
+               subject: "Test Email",
+               body: "Test"
+           }
+       }
 }
