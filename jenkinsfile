@@ -54,9 +54,7 @@ pipeline {
    }
     post{
            always{
-               mail to: "cardilar@choucairtesting.com",
-               subject: "Test Email",
-               body: "Test"
+               emailext body: 'Mail de Prueba', subject: 'Test Compra', to: 'cardilar@choucairtesting.com'
            }
        }
 }
