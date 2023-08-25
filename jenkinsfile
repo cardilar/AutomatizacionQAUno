@@ -54,7 +54,12 @@ pipeline {
    }
     post{
            always{
-               emailext body: 'Mail de Prueba', subject: 'Test Compra', to: 'cardilar@choucairtesting.com'
+               script{
+                    emailext 'xxxx',
+                    body: 'Mail de prueba',
+                    subject: "Jenkins: Prueba" ,
+                    to: cardilar@choucairtesting.com
+               }
            }
        }
 }
