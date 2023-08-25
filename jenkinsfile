@@ -52,14 +52,9 @@ pipeline {
      }
 
    }
-    post{
-           always{
-               script{
-                    emailext to: "cardilar1234@gmail.com",
-                    subject: "Test Email",
-                    body: "Test",
-                    attachLog: true
-               }
-           }
-       }
+    post {
+            always {
+                emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+            }
+        }
 }
